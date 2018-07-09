@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class LivroService {
 
-  private urlLivro = 'http://192.168.137.13:8080/livro';
+  private urlLivro = 'http://localhost:8080/livro';
 
   constructor(
 
