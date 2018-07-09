@@ -22,18 +22,25 @@ import { Menu } from './componentes/menu/menu';
 import { AppRoute } from './app.router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CadastroUsuario } from './pages/cadastro-usuario/cadastro-usuario';
-import { CadastroCliente } from './pages/cadastro-cliente/cadastro-cliente';
+import { CadastroLivro } from './pages/cadastro-livro/cadastro-livro';
 import { AlterarSenha } from './pages/alterar-senha/alterar-senha';
+import { UsuarioService } from './usuario.service';
+import { HttpClientModule } from '@angular/common/http';
+import { LivroService } from './livro.service';
+import { Locacao } from './pages/locacao/locacao';
+import { LocacaoService } from './locacao.service';
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroCliente,
+    CadastroLivro,
     AlterarSenha,
     CadastroUsuario,
+    Locacao,
     Menu
   ],
   imports: [
     MatExpansionModule,
+    HttpClientModule,
     MatListModule,
     MatSidenavModule,
     AppRoute,
@@ -45,7 +52,7 @@ import { AlterarSenha } from './pages/alterar-senha/alterar-senha';
     MatAutocompleteModule, MatInputModule, MatFormFieldModule,
     FormsModule,MatSliderModule
   ],
-  providers: [],
+  providers: [UsuarioService, LivroService, LocacaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,31 +17,12 @@
                         *ngIf="formGroup.controls['nome'].hasError('required')" >
                         Campo obrigatório</mat-error>
             </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="48%">
-                <input matInput type="text" [(ngModel)]="usuario.cpf"
-                    placeholder="CPF"
-                    formControlName="cpf" required>
-                <mat-error align="start"
-                    *ngIf="formGroup.controls['cpf'].hasError('required')" >
-                    Campo obrigatório
-                </mat-error>
-            </mat-form-field>
+            
         </div>
 
 
         <div fxLayout="row" >
-            <mat-form-field fxFlex="50%">
-                <input matInput type="text" [(ngModel)]="usuario.email"
-                    placeholder="E-mail"
-                    formControlName="email" required>
-                <mat-error align="start"
-                    *ngIf="formGroup.controls['email'].hasError('required')" >
-                    Campo obrigatório
-                </mat-error>
-            </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="48%">
+            <mat-form-field>
                 <input matInput type="text" [(ngModel)]="usuario.login"
                     placeholder="Login"
                     formControlName="login"  required>
@@ -66,52 +47,8 @@
                 <mat-error align="start" *ngIf="formGroup.controls['senha'].hasError('maxlength')">
                     Máximo 50 caracteres</mat-error>
             </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="24%">
-                <input matInput type="password" [(ngModel)]="confirmeSenha" 
-                    placeholder="Confirme a senha"
-                    formControlName="confirmeSenha"  required>
-                <mat-error align="start"
-                        *ngIf="formGroup.controls['confirmeSenha'].hasError('required')" >
-                        Campo obrigatório</mat-error>
-                <mat-hint align="start" *ngIf="formGroup.controls['confirmeSenha'].errors?.equalTo && form.controls['confirmeSenha'].touched" 
-                    class="mat-text-warn" >Senhas não são iguais</mat-hint>
-            </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="50%">
-                <input matInput type="text" [(ngModel)]="usuario.apelido"
-                    placeholder="Apelido"
-                    formControlName="apelido">
-            </mat-form-field>
         </div> 
 
-        <div fxLayout="row" >
-            <mat-form-field fxFlex="24%">
-                <input matInput type="text" [(ngModel)]="usuario.telefone"
-                    placeholder="Telefone"
-                    formControlName="telefone" >
-            </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="24%">
-                <input matInput type="text" [(ngModel)]="usuario.celular"
-                    placeholder="Celular"
-                    formControlName="celular" >
-            </mat-form-field>
-            <span fxFlex="2%"></span>
-            <mat-form-field fxFlex="50%">
-                <input matInput type="text" [(ngModel)]="usuario.grupoUsuario"
-                    placeholder="Grupo de Usuário"
-                    formControlName="grupoUsuario" required>
-                <mat-error align="start"
-                    *ngIf="formGroup.controls['confirmeSenha'].hasError('required')" >
-                    Campo obrigatório</mat-error>
-            </mat-form-field>
-
-        </div> 
-        <div>
-        <mat-checkbox [(ngModel)]="usuario.ativo" formControlName="ativo">Ativo</mat-checkbox>
-            
-        </div>
     </div>
     </mat-card-content>
     <mat-card-actions>

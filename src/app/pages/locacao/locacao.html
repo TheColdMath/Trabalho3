@@ -1,0 +1,41 @@
+<form [formGroup]="formGroup">  
+        <mat-card fxLayout="column">
+        <mat-card-title>
+            Cadastro de locação
+        </mat-card-title>
+        <mat-card-subtitle>
+            locacao
+        </mat-card-subtitle>
+        <mat-card-content fxFlex="100%">
+            <div fxLayout="column">
+            <div fxLayout="row" >
+                    <mat-form-field class="example-full-width">
+                            <input type="text" placeholder="Pick one" aria-label="String" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let livro of livros" [value]="livro.titulo    ">
+                                {{livro.titulo}}
+                              </mat-option>
+                            </mat-autocomplete>
+                          </mat-form-field>           
+            </div>
+    
+            <div fxLayout="row" >
+                <mat-form-field fxFlex="50%">
+                    <input matInput type="text" [(ngModel)]="locacao.usuario"
+                        placeholder="Usuario"
+                        formControlName="usuario" required>
+                    <mat-error align="start"
+                        *ngIf="formGroup.controls['usuario'].hasError('required')" >
+                        Campo obrigatório
+                    </mat-error>
+                </mat-form-field>
+            </div>    
+            
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button color="primary" [disabled]="formGroup.invalid" (click)="salvar()" mat-button>Salvar</button>
+            <button color="secondary" (click)="cancelar()" mat-button>Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
